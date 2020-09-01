@@ -46,7 +46,7 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:text="Already have an Account? Login"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:layout_alignParentLeft="true" />
 
     <Button
@@ -62,7 +62,7 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:text="Join Now"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorAccent"
         />
 
 
