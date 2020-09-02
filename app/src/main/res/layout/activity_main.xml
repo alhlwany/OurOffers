@@ -16,33 +16,42 @@
         android:layout_marginLeft="15sp"
         android:layout_marginTop="5dp"
         android:background="@drawable/btn_lang"
-        android:fontFamily="@font/diwany2"
+        android:fontFamily="@font/engl3"
         android:text="@string/language"
         android:textColor="@color/colorPrimary"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="300dp"
         android:layout_height="130dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/logonew2"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="186dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:src="@drawable/logonew2" />
 
     <TextView
         android:id="@+id/app_slogan"
         android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="240dp"
-        android:text="@string/infoApp"
-        android:textColor="@color/colorAccent"
-        android:textSize="15sp"
-        android:textStyle="italic"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="342dp"
         android:layout_marginRight="80dp"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:text="@string/infoApp"
+        android:fontFamily="@font/engl3"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/main_login_btn"
@@ -52,12 +61,13 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/btn_curf_bg"
+        android:background="@drawable/btn_registr_bg"
         android:padding="20dp"
         android:textAllCaps="false"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:text="@string/login"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:fontFamily="@font/engl3"
         android:layout_alignParentLeft="true" />
 
     <Button
@@ -68,11 +78,12 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/btn_curf_bg2"
+        android:background="@drawable/btn_login_bg"
         android:padding="20dp"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:text="@string/register"
+        android:fontFamily="@font/engl3"
         android:textColor="@color/white"
         />
 
