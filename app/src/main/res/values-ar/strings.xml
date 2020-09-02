@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">عروضنا</string>
+    <string name="language">En</string>
+    <string name="infoApp" >ابحث عن أي شيء واكتشفه  واشتريه عبر الإنترنت.</string>
+    <string name="register">تسجيل عضوية</string>
+    <string name="login">تسجيل الدخول</string>
+</resources>

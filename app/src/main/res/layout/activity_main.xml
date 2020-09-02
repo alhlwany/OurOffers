@@ -5,17 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_ac"
+    android:background="@color/bg"
     tools:context=".MainActivity">
 
-
+    <Button
+        android:id="@+id/btn_log_lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_lang"
+        android:fontFamily="@font/diwany2"
+        android:text="@string/language"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp"
+        android:textStyle="bold" />
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="300dp"
         android:layout_height="130dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/logo"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logonew2"
         />
 
     <TextView
@@ -23,10 +35,10 @@
         android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
-        android:text="Find, Discover, Choose and Buy anything online."
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:layout_marginTop="240dp"
+        android:text="@string/infoApp"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
         android:textStyle="italic"
         android:layout_alignParentRight="true"
         android:layout_marginRight="80dp"
@@ -34,34 +46,34 @@
 
     <Button
         android:id="@+id/main_login_btn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/btn_curf_bg"
         android:padding="20dp"
         android:textAllCaps="false"
-        android:textSize="18sp"
-        android:text="Already have an Account? Login"
+        android:textSize="15sp"
+        android:text="@string/login"
         android:textColor="@color/colorPrimary"
         android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/main_join_now_btn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/main_login_btn"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/input_design"
+        android:background="@drawable/btn_curf_bg2"
         android:padding="20dp"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Join Now"
-        android:textColor="@color/colorAccent"
+        android:text="@string/register"
+        android:textColor="@color/white"
         />
 
 
