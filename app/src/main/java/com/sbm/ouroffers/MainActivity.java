@@ -3,6 +3,7 @@ package com.sbm.ouroffers;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -30,7 +31,9 @@ import static android.os.Build.VERSION_CODES.N;
 public class MainActivity extends AppCompatActivity {
     private ImageView obj_civ_splash_img;
     Animation animation, animation2, animation3, animation4, animation_mix;
-    private Button obj_Log_Button, obj_log_lang_Button;
+    private Button  obj_log_lang_Button,joinNowButton, loginButton;
+
+    private ProgressDialog loadingBar;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
@@ -42,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         //endregion
 
-
+        joinNowButton = (Button) findViewById(R.id.main_join_now_btn);
+        loginButton = (Button) findViewById(R.id.main_login_btn);
+        loadingBar = new ProgressDialog(this);
 
 
         obj_log_lang_Button=(Button) findViewById(R.id.btn_log_lang);
@@ -86,7 +91,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        joinNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //region Language

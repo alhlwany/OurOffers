@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Our Offers</string>
     <string name="language">Ar</string>
-    <string name="infoApp" >Find, Discover, Choose and Buy anything online.</string>
+    <string name="infoApp">Find, Discover, Choose and Buy anything online.</string>
     <string name="register">Join Now</string>
     <string name="login">Login</string>
 </resources>
