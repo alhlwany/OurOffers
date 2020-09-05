@@ -6,4 +6,17 @@
     <string name="infoApp" >ابحث عن أي شيء واكتشفه  واشتريه عبر الإنترنت.</string>
     <string name="register">تسجيل عضوية</string>
     <string name="login">تسجيل الدخول</string>
+    <string name="add_new_group">إضافه نوع</string>
+    <string name="tvColthes">ملابس</string>
+    <string name="tvMarket">سوبرماركت</string>
+    <string name="tvRestaurants">مطاعم</string>
+    <string name="tvLibraries">مكتبات</string>
+    <string name="tvShoes">أحذية</string>
+    <string name="tvWaterPurification">تنقية مياه</string>
+    <string name="tvMaintenance">صيانه</string>
+    <string name="tvClinic">عيادات</string>
+    <string name="tvEngineeringOffice">مكاتب هندسيه</string>
+    <string name="tvCosmetics">مستحضرات تجميل</string>
+    <string name="tvFactory">مصانع</string>
+    <string name="tvComputer">كمبيوتر</string>
 </resources>

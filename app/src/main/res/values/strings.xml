@@ -4,4 +4,17 @@
     <string name="infoApp">Find, Discover, Choose and Buy anything online.</string>
     <string name="register">Join Now</string>
     <string name="login">Login</string>
+    <string name="add_new_group">Add New Group</string>
+    <string name="tvColthes">Clothes</string>
+    <string name="tvMarket">SuperMarket</string>
+    <string name="tvRestaurants">Restaurants</string>
+    <string name="tvLibraries">Libraries</string>
+    <string name="tvShoes">Shoes</string>
+    <string name="tvWaterPurification">WaterPurification</string>
+    <string name="tvMaintenance">Maintenance</string>
+    <string name="tvClinic">Clinic</string>
+    <string name="tvEngineeringOffice">EngineeringOffice</string>
+    <string name="tvCosmetics">Cosmetics</string>
+    <string name="tvFactory">Factory</string>
+    <string name="tvComputer">Computer</string>
 </resources>
