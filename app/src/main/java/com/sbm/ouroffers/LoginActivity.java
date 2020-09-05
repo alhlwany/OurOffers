@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.sbm.ouroffers.Class.Users;
 import com.sbm.ouroffers.Prevalent.Prevalent;
 import com.sbm.ouroffers.Users.HomeActivity;
+import com.sbm.ouroffers.UsersAdmin.AdminHomeActivity;
 
 import io.paperdb.Paper;
 
@@ -155,8 +156,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                               // Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
-                              //  startActivity(intent);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
+                                startActivity(intent);
                             }
                             else if (parentDbName.equals("Users"))
                             {

@@ -1,5 +1,6 @@
 package com.sbm.ouroffers;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +12,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Animation;
@@ -19,11 +21,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.sbm.ouroffers.Class.Gnr_Variable;
+import com.sbm.ouroffers.Class.Users;
+import com.sbm.ouroffers.Prevalent.Prevalent;
+import com.sbm.ouroffers.Users.HomeActivity;
 
 import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
+
+import io.paperdb.Paper;
 
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
 import static android.os.Build.VERSION_CODES.N;
@@ -41,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Paper.init(this);
         //region hide toolbar
         getSupportActionBar().hide();
         //endregion
@@ -108,6 +121,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        String UserPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
+        String UserPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
+
+        if (UserPhoneKey != "" && UserPasswordKey != "")
+        {
+            if (!TextUtils.isEmpty(UserPhoneKey)  &&  !TextUtils.isEmpty(UserPasswordKey))
+            {
+                AllowAccess(UserPhoneKey, UserPasswordKey);
+
+                loadingBar.setTitle("Already Logged in");
+                loadingBar.setMessage("Please wait.....");
+                loadingBar.setCanceledOnTouchOutside(false);
+                loadingBar.show();
+            }
+        }
     }
 
     //region Language
@@ -130,4 +159,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //endregion
+
+    private void AllowAccess(final String phone, final String password)
+    {
+        final DatabaseReference RootRef;
+        RootRef = FirebaseDatabase.getInstance().getReference();
+
+
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.child("Users").child(phone).exists())
+                {
+                    Users usersData = dataSnapshot.child("Users").child(phone).getValue(Users.class);
+
+                    if (usersData.getPhone().equals(phone))
+                    {
+                        if (usersData.getPassword().equals(password))
+                        {
+                            Toast.makeText(MainActivity.this, "Please wait, you are already logged in...", Toast.LENGTH_SHORT).show();
+                            loadingBar.dismiss();
+
+                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                            Prevalent.currentOnlineUser = usersData;
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            loadingBar.dismiss();
+                            Toast.makeText(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
